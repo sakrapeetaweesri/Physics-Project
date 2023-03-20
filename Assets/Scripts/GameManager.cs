@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject instructionObject;
 
+    [SerializeField] private GameObject creditPage;
+
     [SerializeField] private Animator transition;
 
     public static bool GameStarted { get; private set; }
@@ -68,6 +70,11 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         GameStarted = false;
+    }
+
+    public void SetCreditPage(bool active)
+    {
+        creditPage.SetActive(active);
     }
 
     public void OutOfBound(Beyblade beyblade)
